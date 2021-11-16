@@ -37,9 +37,9 @@
             </div>
         </nav>
         <!-- Page content-->
-        <div class="container mt-5" style="height: 500px">
+        <div class="container mt-5">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4"  style="margin-right: 30px">
                     <!-- Post content-->
                     <div style="margin-top: 40px">
                         <!-- Preview image figure-->
@@ -47,7 +47,7 @@
                         
                         <div class="container px-4 px-lg-5">
                             <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
-                                <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 300px;  margin-top: 20px;">
+                                <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 300px;  margin-top: 30px; margin-bottom: 30px;">
                                 <i class="bi bi-chevron-left"></i>Image File Choose
                                 </button>
                             </div>
@@ -57,35 +57,90 @@
 
 
                 <!-- Side widgets-->
-                <div class="col-lg-6" style="margin-left: 30px">
-                    
+                <div class="col-lg-6">
                     <!-- Title -->
-                    <h4>기사제목</h4>
-                    <div class="input-group" style="margin-bottom: 20px">
-                        <input class="form-control" type="text"/>
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2">
+                            <h4>기사제목</h4>
+                            <div class="input-group" style="margin-bottom: 20px">
+                                <input class="form-control" type="text"/>
+                            </div>
+                        </div>
                     </div>
-
                     <!-- 신뢰도 -->
-                    <div class="input-group" style="margin-bottom: 20px; width: 200px;">
-                        <h4 style="margin-right: 30px;">신뢰도 </h4>
-                        <input class="form-control" type="number" min="0" max="100" step="5" />
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2">
+                            <div class="input-group" style="margin-bottom: 20px; width: 500px;">
+                                <h5 style="margin-top: 5px">신뢰도</h5>
+                                <span style="margin-left: 15px;">
+                                    <input class="form-control" type="number" min="0" max="100" step="10" />
+                                </span>
+                            </div>
+                        </div>
                     </div>
 
-                    
-                    <!-- news post --> 
-                    <div class="input-group" style="margin-bottom: 20px">
-                        <textarea class="form-control" cols="200" rows="8">기사 내용 입력</textarea>
-                    </div>
-
+                    <!-- 카테고리 -->
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2">
+                            <div class="input-group" style="margin-bottom: 20px;">
+                                <h5>카테고리</h5>
+                                <span style="margin-left: 15px;">
+                                    <form>
+                                        <select name="category1">
+                                            <option value="none" selected> == 카테고리 1 ==</option>
+                                            <option value="breaking">속보</option>
+                                            <option value="politics">정치</option>
+                                            <option value="economy">경제</option>
+                                            <option value="society">사회</option>
+                                            <option value="lifeculture">생활/문화</option>
+                                            <option value="world">세계</option>
+                                            <option value="ITscience">IT/과학</option>
+                                        </select>
+                                    </form>
+                                </span>
+                                <span style="margin-left: 15px;">
+                                    <form>
+                                        <select name="category2">
+                                            <option value="none" selected> == 카테고리 2 ==</option>
+                                            <option value="breaking">속보</option>
+                                            <option value="politics">정치</option>
+                                            <option value="economy">경제</option>
+                                            <option value="society">사회</option>
+                                            <option value="lifeculture">생활/문화</option>
+                                            <option value="world">세계</option>
+                                            <option value="ITscience">IT/과학</option>
+                                        </select>
+                                    </form>
+                                </span>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- 기사 내용 -->
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2"> 
+                            <div class="input-group" style="margin-bottom: 20px">
+                                <textarea class="form-control" cols="200" rows="8">기사 내용 입력</textarea>
+                            </div>
+                        </div>
+                    </div> 
                     <!-- buttons -->
-                    <div class="input-group" style="margin-bottom: 20px;">
-                        <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 100px;  margin: 20px;">
-                            <i class="bi bi-chevron-center"></i>취소
-                        </button>
-                        <button type="submit" class="btn btn-outline-light" style="background-color: #f3c677; width: 100px;  margin: 20px;">
-                            <i class="bi bi-chevron-center"></i>작성
-                        </button>
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2"> 
+                            <div class="input-group" style="margin-bottom: 20px;">
+                                <span style="margin-right: 20px">
+                                    <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 100px;">
+                                        <i class="bi bi-chevron-center"></i>취소
+                                    </button>
+                                </span>
+                                <span>
+                                    <button type="submit" class="btn btn-outline-light" style="background-color: #f3c677; width: 100px;">
+                                        <i class="bi bi-chevron-center"></i>작성
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
