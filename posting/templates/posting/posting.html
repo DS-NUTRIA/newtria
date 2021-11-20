@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Newtria Posting</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'posting/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light" 
+                style="background-color: #f3c677;">
+            <div class="container">
+                <a class="navbar-brand" href="#!">
+                    <img src="img/logo.png"  alt="logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <form class="d-grid gap-2 d-md-block" style="position:absolute; top: 40px; right: 150px;">
+                        <button class="btn" style="background-color: #3498db; color:white;" type="submit" value="MyPage">
+                            My Page
+                        </button>
+
+                        <button class="btn" style="background-color: #E0E0E0; color:#494949;" type="submit" value="SignUp">
+                            Sign out
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container mt-5" style="height: 500px">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- Post content-->
+                    <div style="margin-top: 40px">
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/600x400/ced4da/6c757d.jpg" alt="..." style="width: 600px; height: 300px" /></figure>
+                        
+                        <div class="container px-4 px-lg-5">
+                            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
+                                <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 300px;  margin-top: 20px;">
+                                <i class="bi bi-chevron-left"></i>Image File Choose
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Side widgets-->
+                <div class="col-lg-6" style="margin-left: 30px">
+                    
+                    <!-- Title -->
+                    <h4>기사제목</h4>
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <input class="form-control" type="text"/>
+                    </div>
+
+                    <!-- 신뢰도 -->
+                    <div class="input-group" style="margin-bottom: 20px; width: 200px;">
+                        <h4 style="margin-right: 30px;">신뢰도 </h4>
+                        <input class="form-control" type="number" min="0" max="100" step="5" />
+                    </div>
+
+                    
+                    <!-- news post --> 
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <textarea class="form-control" cols="200" rows="8">기사 내용 입력</textarea>
+                    </div>
+
+                    <!-- buttons -->
+                    <div class="input-group" style="margin-bottom: 20px;">
+                        <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 100px;  margin: 20px;">
+                            <i class="bi bi-chevron-center"></i>취소
+                        </button>
+                        <button type="submit" class="btn btn-outline-light" style="background-color: #f3c677; width: 100px;  margin: 20px;">
+                            <i class="bi bi-chevron-center"></i>작성
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">copyright &copy;2021 NEWTRIA co.,Ltd. All rights reserves</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'posting/js/scripts.js' %}"></script>
+    </body>
+</html>
