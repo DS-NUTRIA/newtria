@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 from .models import Post, Category, Comment
@@ -69,6 +70,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView): # 모델명_form
         response = super(PostUpdate, self).form_valid(form)
 
         return response
+
 class CommentUpdate(LoginRequiredMixin, UpdateView):
     model = Comment
     form_class = CommentForm
@@ -122,3 +124,14 @@ def delete_comment(request, pk):
     else:
         raise PermissionDenied
 
+class CommentDelete(LoginRequiredMixin, DeleteView):
+    model = Comment
+    form_class = CommentForm
+    success_url = '/posting/'
+
+    def dispatch(self, request, *args, **kwargs):
+
+        if request.user.is_authenticated and request.user ==self.get_object().author:
+            return super(CommentDelete, self).dispatch(request, *args, **kwargs)
+        else:
+            raise PermissionDenied
