@@ -85,7 +85,7 @@ def category_page(request, slug):
         post_list = Post.objects.filter(category=None)
     else :
         category = Category.objects.get(slug=slug)
-        post_list = Post.objects.filter(category=category)
+        post_list = category.post_set.all()
 
     return render(request, 'posting/post_list.html',
                   {
@@ -94,6 +94,7 @@ def category_page(request, slug):
                       'no_category_post_count' : Post.objects.filter(category=None).count(),
                       'category' : category
                   })
+
 def new_comment(request, pk):
     if request.user.is_authenticated:
         post=get_object_or_404(Post,pk=pk)
