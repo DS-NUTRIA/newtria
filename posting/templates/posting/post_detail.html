@@ -38,7 +38,7 @@
                         </header>
                         <!-- Preview image figure-->
                         {% if post.head_image %}
-                            <img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="{{post.title}}의 head image" /></figure>
+                            <img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="{{post.title}}의 head image" />
                         {% else %}
                           <img class="img-fluid rounded" src="https://picsum.photos/seed/{{post.id}}/800/200" alt ="random image"/>
                         {% endif %}
@@ -57,7 +57,7 @@
                                 <form id="comment-form" method="post" action="{{post.get_absolute_url}}new_comment/" class="mb-4">
                                     {% csrf_token %}
                                     <div class="form-group">
-                                        <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea>
+                                        {{comment_form}}
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -79,7 +79,7 @@
                                         <a role="button" href="#"
                                            id="comment-{{comment.pk}}-delete-modal-btn"
                                            class="btn btn-sm btn-danger"
-                                           data-toggle="modal" data-target="#deleteCommentModal"-{{comment.pk}}>delete
+                                           data-toggle="modal" data-target="#deleteCommentModal-{{comment.pk}}">delete
                                         </a>
                                     </div>
 
@@ -94,7 +94,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <del>{{ comment | linebreaks }}</del>
+                                                    <del>{{ comment }}</del>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -115,8 +115,8 @@
                                 {% endif%}
                             </div>
                     </section>
+                               {% include 'posting/sidebar.html' %}
                 </div>
-                {% include 'posting/sidebar.html' %}
                 </div>
             </div>
 
