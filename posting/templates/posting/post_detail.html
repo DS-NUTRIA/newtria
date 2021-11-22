@@ -15,7 +15,7 @@
 
                             <!-- Post categories-->
                             {% if post.category %}
-                                <span class="badge bg-secondary float-right">{{post.category}}</span>
+                                <a class="badge bg-secondary float-right" href="{{ post.category.get_absolute_url }}">{{post.category}}</a>
                             {% else %}
                                 <span class="badge bg-secondary float-right">미분류</span>
                             {% endif %}
@@ -84,8 +84,24 @@
                                     </div>
 
                                     <!--Modal-->
-                                    <div class="modal fade" id="deleteCommentModal-{{comment.pk}}" tabindex="-1" role="dialog" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
+                                        {% endif %}
+                                        <div class="fw-bold">{{comment.author.username}} &nbsp;&nbsp;<small class="text-muted">{{ comment.created_at }}</small></div>
+                                    <p>{{comment.content | linebreaks }}</p>
+                                        {% if comment.created_at != comment.modified_at %}
+                                        <p class="text-muted float-right"><small>Updated:{{comment.modified_at}}</small></p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                {% endif%}
+                            </div>
+                    </section>
+                </div>
+                                               {% include 'posting/sidebar.html' %}
+                </div>
+            </div>
+        <div class="modal fade" id="deleteCommentModal-{{comment.pk}}" tabindex="-1" role="dialog" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="deleteModalLabel">Are you sure?</h5>
@@ -103,21 +119,4 @@
                                             </div>
                                         </div>
                                     </div>
-                                        {% endif %}
-                                        <div class="fw-bold">{{comment.author.username}} &nbsp;&nbsp;<small class="text-muted">{{ comment.created_at }}</small></div>
-                                    <p>{{comment.content | linebreaks }}</p>
-                                        {% if comment.created_at != comment.modified_at %}
-                                        <p class="text-muted float-right"><small>Updated:{{comment.modified_at}}</small></p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                {% endfor %}
-                                {% endif%}
-                            </div>
-                    </section>
-                               {% include 'posting/sidebar.html' %}
-                </div>
-                </div>
-            </div>
-
 {% endblock %}
