@@ -31,11 +31,15 @@
                         <button class="btn" style="background-color: #3498db; color:white;" type="submit" value="MyPage">
                             My Page
                         </button>
-
-                        <button class="btn" style="background-color: #E0E0E0; color:#494949;" type="submit" value="SignUp">
-                            Sign Up
-                        </button>
-
+                        {% if user.is_authenticated %}
+                        <a class="btn" style="background-color: #E0E0E0; color:#494949;" href="{% url 'account_logout' %}"type="submit" value="SignUp">
+                            Log out
+                        </a>
+                        {% else %}
+                        <a class="btn" style="background-color: #E0E0E0; color:#494949;" type="submit" value="SignUp" href="{% url 'account_login' %}">
+                            Log in
+                        </a>
+                        {% endif %}
                     </form>
                 </div>
             </div>
