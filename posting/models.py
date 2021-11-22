@@ -33,7 +33,7 @@ class Post(models.Model):
         return f'[{self.pk}]{self.title} :: {self.author}'
 
     def get_absolute_url(self):
-        return f'/posting/{self.pk}'
+        return f'/posting/{self.pk}/'
 
 class Comment(models.Model):
     post=models.ForeignKey(Post,on_delete=models.CASCADE)
